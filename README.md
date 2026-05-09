@@ -4,6 +4,8 @@ BPScanner is an iOS app for capturing blood pressure monitor photos, extracting 
 
 The app is experimental and is not a medical device. Always review readings before saving them, and follow guidance from a qualified clinician for medical decisions.
 
+![BPScanner demo](docs/assets/bpscanner-demo.gif)
+
 ## Features
 
 - Camera and photo-library import for monitor images
