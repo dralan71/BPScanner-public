@@ -1,0 +1,10 @@
+.derivedData/
+DerivedData/
+.DS_Store
+build/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+BPScanner.xcodeproj/project.xcworkspace/xcuserdata/
+BPScanner.xcodeproj/xcuserdata/
+Config/GeminiSecrets.xcconfig

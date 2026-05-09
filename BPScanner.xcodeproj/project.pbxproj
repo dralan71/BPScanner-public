@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		85F745382FA3EC3B00DDF3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85F745222FA3EC3900DDF3A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85F745292FA3EC3900DDF3A3;
+			remoteInfo = BPScanner;
+		};
+		85F745422FA3EC3B00DDF3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85F745222FA3EC3900DDF3A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85F745292FA3EC3900DDF3A3;
+			remoteInfo = BPScanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85F7452A2FA3EC3900DDF3A3 /* BPScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F745372FA3EC3B00DDF3A3 /* BPScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BPScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F745412FA3EC3B00DDF3A3 /* BPScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BPScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0D3X0012FA3EC3900DDF3A3 /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		85F745672FA3F00600DDF3A3 /* Exceptions for "BPScanner" folder in "BPScanner" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 85F745292FA3EC3900DDF3A3 /* BPScanner */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		85F7452C2FA3EC3900DDF3A3 /* BPScanner */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				85F745672FA3F00600DDF3A3 /* Exceptions for "BPScanner" folder in "BPScanner" target */,
+			);
+			path = BPScanner;
+			sourceTree = "<group>";
+		};
+		85F7453A2FA3EC3B00DDF3A3 /* BPScannerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BPScannerTests;
+			sourceTree = "<group>";
+		};
+		85F745442FA3EC3B00DDF3A3 /* BPScannerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BPScannerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85F745272FA3EC3900DDF3A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85F745342FA3EC3B00DDF3A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85F7453E2FA3EC3B00DDF3A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85F745212FA3EC3900DDF3A3 = {
+			isa = PBXGroup;
+			children = (
+				C0D3X0022FA3EC3900DDF3A3 /* Config */,
+				85F7452C2FA3EC3900DDF3A3 /* BPScanner */,
+				85F7453A2FA3EC3B00DDF3A3 /* BPScannerTests */,
+				85F745442FA3EC3B00DDF3A3 /* BPScannerUITests */,
+				85F7452B2FA3EC3900DDF3A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85F7452B2FA3EC3900DDF3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85F7452A2FA3EC3900DDF3A3 /* BPScanner.app */,
+				85F745372FA3EC3B00DDF3A3 /* BPScannerTests.xctest */,
+				85F745412FA3EC3B00DDF3A3 /* BPScannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0D3X0022FA3EC3900DDF3A3 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C0D3X0012FA3EC3900DDF3A3 /* APIKeys.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85F745292FA3EC3900DDF3A3 /* BPScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85F7454B2FA3EC3B00DDF3A3 /* Build configuration list for PBXNativeTarget "BPScanner" */;
+			buildPhases = (
+				85F745262FA3EC3900DDF3A3 /* Sources */,
+				85F745272FA3EC3900DDF3A3 /* Frameworks */,
+				C0D3X0032FA3EC3900DDF3A3 /* Generate API Secrets */,
+				85F745282FA3EC3900DDF3A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				85F7452C2FA3EC3900DDF3A3 /* BPScanner */,
+			);
+			name = BPScanner;
+			packageProductDependencies = (
+			);
+			productName = BPScanner;
+			productReference = 85F7452A2FA3EC3900DDF3A3 /* BPScanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85F745362FA3EC3B00DDF3A3 /* BPScannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85F7454E2FA3EC3B00DDF3A3 /* Build configuration list for PBXNativeTarget "BPScannerTests" */;
+			buildPhases = (
+				85F745332FA3EC3B00DDF3A3 /* Sources */,
+				85F745342FA3EC3B00DDF3A3 /* Frameworks */,
+				85F745352FA3EC3B00DDF3A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85F745392FA3EC3B00DDF3A3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				85F7453A2FA3EC3B00DDF3A3 /* BPScannerTests */,
+			);
+			name = BPScannerTests;
+			packageProductDependencies = (
+			);
+			productName = BPScannerTests;
+			productReference = 85F745372FA3EC3B00DDF3A3 /* BPScannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		85F745402FA3EC3B00DDF3A3 /* BPScannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85F745512FA3EC3B00DDF3A3 /* Build configuration list for PBXNativeTarget "BPScannerUITests" */;
+			buildPhases = (
+				85F7453D2FA3EC3B00DDF3A3 /* Sources */,
+				85F7453E2FA3EC3B00DDF3A3 /* Frameworks */,
+				85F7453F2FA3EC3B00DDF3A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85F745432FA3EC3B00DDF3A3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				85F745442FA3EC3B00DDF3A3 /* BPScannerUITests */,
+			);
+			name = BPScannerUITests;
+			packageProductDependencies = (
+			);
+			productName = BPScannerUITests;
+			productReference = 85F745412FA3EC3B00DDF3A3 /* BPScannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85F745222FA3EC3900DDF3A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					85F745292FA3EC3900DDF3A3 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					85F745362FA3EC3B00DDF3A3 = {
+						CreatedOnToolsVersion = 26.4.1;
+						TestTargetID = 85F745292FA3EC3900DDF3A3;
+					};
+					85F745402FA3EC3B00DDF3A3 = {
+						CreatedOnToolsVersion = 26.4.1;
+						TestTargetID = 85F745292FA3EC3900DDF3A3;
+					};
+				};
+			};
+			buildConfigurationList = 85F745252FA3EC3900DDF3A3 /* Build configuration list for PBXProject "BPScanner" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"es-419",
+			);
+			mainGroup = 85F745212FA3EC3900DDF3A3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 85F7452B2FA3EC3900DDF3A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85F745292FA3EC3900DDF3A3 /* BPScanner */,
+				85F745362FA3EC3B00DDF3A3 /* BPScannerTests */,
+				85F745402FA3EC3B00DDF3A3 /* BPScannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85F745282FA3EC3900DDF3A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85F745352FA3EC3B00DDF3A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85F7453F2FA3EC3B00DDF3A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C0D3X0032FA3EC3900DDF3A3 /* Generate API Secrets */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate API Secrets";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Secrets.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\nSECRETS_DIR=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\nSECRETS_PLIST=\"${SECRETS_DIR}/Secrets.plist\"\nGEMINI_VALUE=\"${GEMINI_API_KEY:-}\"\nROBOFLOW_VALUE=\"${ROBOFLOW_API_KEY:-}\"\nmkdir -p \"$SECRETS_DIR\"\ncat > \"$SECRETS_PLIST\" <<EOF\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n<plist version=\"1.0\">\n<dict>\n    <key>GEMINI_API_KEY</key>\n    <string>${GEMINI_VALUE}</string>\n    <key>ROBOFLOW_API_KEY</key>\n    <string>${ROBOFLOW_VALUE}</string>\n</dict>\n</plist>\nEOF\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85F745262FA3EC3900DDF3A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85F745332FA3EC3B00DDF3A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85F7453D2FA3EC3B00DDF3A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85F745392FA3EC3B00DDF3A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85F745292FA3EC3900DDF3A3 /* BPScanner */;
+			targetProxy = 85F745382FA3EC3B00DDF3A3 /* PBXContainerItemProxy */;
+		};
+		85F745432FA3EC3B00DDF3A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85F745292FA3EC3900DDF3A3 /* BPScanner */;
+			targetProxy = 85F745422FA3EC3B00DDF3A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		85F745492FA3EC3B00DDF3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 57PK24C8X9;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		85F7454A2FA3EC3B00DDF3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 57PK24C8X9;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85F7454C2FA3EC3B00DDF3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0D3X0012FA3EC3900DDF3A3 /* APIKeys.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BPScanner/BPScanner.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 57PK24C8X9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "BP Scanner uses the camera to photograph your blood pressure monitor.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "BP Scanner reads your past readings to display your history.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "BP Scanner saves your blood pressure and pulse readings to Apple Health.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "BP Scanner uses your photo library to import monitor photos.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.alancalderon.BPScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85F7454D2FA3EC3B00DDF3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0D3X0012FA3EC3900DDF3A3 /* APIKeys.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BPScanner/BPScanner.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 57PK24C8X9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "BP Scanner uses the camera to photograph your blood pressure monitor.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "BP Scanner reads your past readings to display your history.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "BP Scanner saves your blood pressure and pulse readings to Apple Health.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "BP Scanner uses your photo library to import monitor photos.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.alancalderon.BPScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		85F7454F2FA3EC3B00DDF3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57PK24C8X9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dralan71.BPScannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BPScanner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BPScanner";
+			};
+			name = Debug;
+		};
+		85F745502FA3EC3B00DDF3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57PK24C8X9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dralan71.BPScannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BPScanner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BPScanner";
+			};
+			name = Release;
+		};
+		85F745522FA3EC3B00DDF3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57PK24C8X9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dralan71.BPScannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BPScanner;
+			};
+			name = Debug;
+		};
+		85F745532FA3EC3B00DDF3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57PK24C8X9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dralan71.BPScannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BPScanner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85F745252FA3EC3900DDF3A3 /* Build configuration list for PBXProject "BPScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F745492FA3EC3B00DDF3A3 /* Debug */,
+				85F7454A2FA3EC3B00DDF3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85F7454B2FA3EC3B00DDF3A3 /* Build configuration list for PBXNativeTarget "BPScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F7454C2FA3EC3B00DDF3A3 /* Debug */,
+				85F7454D2FA3EC3B00DDF3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85F7454E2FA3EC3B00DDF3A3 /* Build configuration list for PBXNativeTarget "BPScannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F7454F2FA3EC3B00DDF3A3 /* Debug */,
+				85F745502FA3EC3B00DDF3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85F745512FA3EC3B00DDF3A3 /* Build configuration list for PBXNativeTarget "BPScannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F745522FA3EC3B00DDF3A3 /* Debug */,
+				85F745532FA3EC3B00DDF3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85F745222FA3EC3900DDF3A3 /* Project object */;
+}

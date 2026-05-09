@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>BP Scanner accesses your photos to import blood pressure monitor images.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>BP Scanner saves captured monitor photos to your photo library when you enable that setting.</string>
+    <key>NSHealthShareUsageDescription</key>
+    <string>BP Scanner reads your past readings to display your history.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>BP Scanner saves your blood pressure and pulse readings to Apple Health.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>BP Scanner uses the camera to capture photos of your blood pressure monitor.</string>
+</dict>
+</plist>
