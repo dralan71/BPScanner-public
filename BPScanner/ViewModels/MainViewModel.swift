@@ -244,6 +244,12 @@ final class MainViewModel: ObservableObject {
         await loadReadings()
     }
 
+    func deleteReading(_ reading: StoredBloodPressureReading) async throws {
+        try await healthKitService.requestAuthorization()
+        try await healthKitService.deleteReading(reading)
+        await loadReadings()
+    }
+
     func enableAutoSaveCapturedPhotos() async -> Bool {
         let status = await requestPhotoLibraryAddAuthorizationIfNeeded()
         let isAuthorized = status == .authorized || status == .limited

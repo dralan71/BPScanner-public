@@ -10,5 +10,6 @@ protocol HealthKitServicing: Sendable {
         pulse: Int?,
         at timestamp: Date
     ) async throws
+    func deleteReading(_ reading: StoredBloodPressureReading) async throws
     func fetchReadings(startDate: Date, endDate: Date) async throws -> [StoredBloodPressureReading]
 }

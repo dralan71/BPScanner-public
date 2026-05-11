@@ -5,16 +5,21 @@ import UIKit
 
 struct ReadingDetailView: View {
     @StateObject private var viewModel: ReviewViewModel
+    @State private var isDeleting = false
+    @State private var isShowingDeleteAlert = false
     @FocusState private var focusedField: ReviewViewModel.EntryField?
     @Environment(\.dismiss) private var dismiss
 
     let onSave: (Int, Int, Int?, Date) async throws -> Void
+    let onDelete: () async throws -> Void
 
     init(
         reading: StoredBloodPressureReading,
-        onSave: @escaping (Int, Int, Int?, Date) async throws -> Void
+        onSave: @escaping (Int, Int, Int?, Date) async throws -> Void,
+        onDelete: @escaping () async throws -> Void
     ) {
         self.onSave = onSave
+        self.onDelete = onDelete
         _viewModel = StateObject(wrappedValue: ReviewViewModel(
             systolic: reading.systolic,
             diastolic: reading.diastolic,
@@ -83,6 +88,20 @@ struct ReadingDetailView: View {
                             .cornerRadius(8)
                         }
                         .disabled(!viewModel.isValid || viewModel.isSaving)
+
+                        Button(role: .destructive) {
+                            isShowingDeleteAlert = true
+                        } label: {
+                            Label {
+                                Text("Delete", bundle: .main)
+                                    .fontWeight(.semibold)
+                            } icon: {
+                                Image(systemName: "trash")
+                            }
+                        }
+                        .buttonStyle(.bordered)
+                        .controlSize(.small)
+                        .disabled(viewModel.isSaving || isDeleting)
                     }
                     .padding()
                     .contentShape(Rectangle())
@@ -112,7 +131,7 @@ struct ReadingDetailView: View {
                     } label: {
                         Image(systemName: "xmark")
                     }
-                    .disabled(viewModel.isSaving)
+                    .disabled(viewModel.isSaving || isDeleting)
                     .accessibilityLabel(String(localized: "Close", bundle: .main))
                 }
 
@@ -133,6 +152,14 @@ struct ReadingDetailView: View {
                 Button(String(localized: "Cancel", bundle: .main), role: .cancel) {}
             } message: {
                 Text("Choose whether to save this reading before leaving.", bundle: .main)
+            }
+            .alert(String(localized: "Delete Reading?", bundle: .main), isPresented: $isShowingDeleteAlert) {
+                Button(String(localized: "Delete", bundle: .main), role: .destructive) {
+                    deleteReading()
+                }
+                Button(String(localized: "Cancel", bundle: .main), role: .cancel) {}
+            } message: {
+                Text("This removes the reading from HealthKit.", bundle: .main)
             }
         }
     }
@@ -192,6 +219,21 @@ struct ReadingDetailView: View {
 
             if shouldDismiss {
                 dismiss()
+            }
+        }
+    }
+
+    private func deleteReading() {
+        Task {
+            guard !isDeleting else { return }
+
+            isDeleting = true
+            do {
+                try await onDelete()
+                isDeleting = false
+                dismiss()
+            } catch {
+                isDeleting = false
             }
         }
     }
@@ -268,6 +310,8 @@ private struct DismissAttemptHandler: UIViewControllerRepresentable {
             diastolic: 79,
             pulse: 72,
             timestamp: Date()
-        )
-    ) { _, _, _, _ in }
+        ),
+        onSave: { _, _, _, _ in },
+        onDelete: {}
+    )
 }

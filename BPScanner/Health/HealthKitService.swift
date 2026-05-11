@@ -174,7 +174,7 @@ actor HealthKitService {
         return result
     }
 
-    private func deleteReading(_ reading: StoredBloodPressureReading) async throws {
+    func deleteReading(_ reading: StoredBloodPressureReading) async throws {
         let samples = try await samplesMatching(reading)
 
         guard !samples.isEmpty else {

@@ -9,6 +9,7 @@ struct MainView: View {
     @StateObject private var viewModel: MainViewModel
     @State private var visibleReadingCount = 5
     @State private var selectedReading: StoredBloodPressureReading?
+    @State private var pendingDeleteReading: StoredBloodPressureReading?
     
     @MainActor
     init(viewModel: MainViewModel? = nil) {
@@ -17,51 +18,7 @@ struct MainView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 24) {
-                    if viewModel.readings.isEmpty {
-                        // Empty state
-                        VStack(spacing: 16) {
-                            Image(systemName: "chart.line.uptrend.xyaxis")
-                                .font(.system(size: 48))
-                                .foregroundColor(.gray)
-                            Text("No readings yet", bundle: .main)
-                                .font(.headline)
-                            Text("Tap the button below to add your first one.", bundle: .main)
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                        }
-                        .padding()
-                        .frame(maxWidth: .infinity, minHeight: 360)
-                    } else {
-                        VStack(alignment: .leading, spacing: 16) {
-                            Text("Recent readings", bundle: .main)
-                                .font(.headline)
-                                .padding(.horizontal)
-
-                            VStack(spacing: 12) {
-                                ForEach(displayedReadings) { reading in
-                                    readingRow(for: reading)
-                                }
-                            }
-                            .padding(.horizontal)
-
-                            if canShowMoreReadings {
-                                Button {
-                                    visibleReadingCount = min(visibleReadingCount + 5, maximumVisibleReadings)
-                                } label: {
-                                    Text("Show more", bundle: .main)
-                                        .fontWeight(.semibold)
-                                        .frame(maxWidth: .infinity)
-                                }
-                                .buttonStyle(.bordered)
-                                .padding(.horizontal)
-                            }
-                        }
-                    }
-                }
-            }
-            .padding(.vertical)
+            readingsContent
             .safeAreaInset(edge: .bottom) {
                 scanButton
                     .padding()
@@ -160,6 +117,9 @@ struct MainView: View {
                             pulse: pulse,
                             timestamp: ts
                         )
+                    },
+                    onDelete: {
+                        try await viewModel.deleteReading(reading)
                     }
                 )
             }
@@ -167,6 +127,19 @@ struct MainView: View {
                 Button(String(localized: "OK", bundle: .main), role: .cancel) {}
             } message: {
                 Text("Allow photo library access to auto-save captured photos.", bundle: .main)
+            }
+            .alert(
+                String(localized: "Delete Reading?", bundle: .main),
+                isPresented: deleteConfirmationBinding
+            ) {
+                Button(String(localized: "Delete", bundle: .main), role: .destructive) {
+                    confirmDeleteReading()
+                }
+                Button(String(localized: "Cancel", bundle: .main), role: .cancel) {
+                    pendingDeleteReading = nil
+                }
+            } message: {
+                Text("This removes the reading from HealthKit.", bundle: .main)
             }
             .fullScreenCover(isPresented: viewModel.processingBinding(), onDismiss: viewModel.presentPendingScanIfNeeded) {
                 Group {
@@ -197,6 +170,58 @@ struct MainView: View {
             .onChange(of: viewModel.readings.count) {
                 visibleReadingCount = 5
             }
+        }
+    }
+
+    @ViewBuilder
+    private var readingsContent: some View {
+        if viewModel.readings.isEmpty {
+            ScrollView {
+                VStack(spacing: 16) {
+                    Image(systemName: "chart.line.uptrend.xyaxis")
+                        .font(.system(size: 48))
+                        .foregroundColor(.gray)
+                    Text("No readings yet", bundle: .main)
+                        .font(.headline)
+                    Text("Tap the button below to add your first one.", bundle: .main)
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                .padding()
+                .frame(maxWidth: .infinity, minHeight: 360)
+            }
+            .padding(.vertical)
+        } else {
+            List {
+                Section {
+                    ForEach(displayedReadings) { reading in
+                        readingRow(for: reading)
+                            .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                    }
+
+                    if canShowMoreReadings {
+                        Button {
+                            visibleReadingCount = min(visibleReadingCount + 5, maximumVisibleReadings)
+                        } label: {
+                            Text("Show more", bundle: .main)
+                                .fontWeight(.semibold)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.bordered)
+                        .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                    }
+                } header: {
+                    Text("Recent readings", bundle: .main)
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+                        .textCase(nil)
+                }
+            }
+            .listStyle(.plain)
         }
     }
 
@@ -268,6 +293,17 @@ struct MainView: View {
         visibleReadingCount < maximumVisibleReadings
     }
 
+    private var deleteConfirmationBinding: Binding<Bool> {
+        Binding(
+            get: { pendingDeleteReading != nil },
+            set: { isPresented in
+                if !isPresented {
+                    pendingDeleteReading = nil
+                }
+            }
+        )
+    }
+
     @ViewBuilder
     private func readingRow(for reading: StoredBloodPressureReading) -> some View {
         Button {
@@ -308,6 +344,22 @@ struct MainView: View {
             )
         }
         .buttonStyle(.plain)
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button(role: .destructive) {
+                pendingDeleteReading = reading
+            } label: {
+                Label(String(localized: "Delete", bundle: .main), systemImage: "trash")
+            }
+        }
+    }
+
+    private func confirmDeleteReading() {
+        guard let reading = pendingDeleteReading else { return }
+
+        pendingDeleteReading = nil
+        Task {
+            try? await viewModel.deleteReading(reading)
+        }
     }
 }
 
@@ -327,6 +379,8 @@ private struct PreviewHealthKitService: HealthKitServicing {
         pulse: Int?,
         at timestamp: Date
     ) async throws {}
+
+    func deleteReading(_ reading: StoredBloodPressureReading) async throws {}
 
     func fetchReadings(startDate: Date, endDate: Date) async throws -> [StoredBloodPressureReading] {
         let calendar = Calendar.current

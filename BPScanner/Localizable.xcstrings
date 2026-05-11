@@ -330,6 +330,26 @@
         }
       }
     },
+    "Delete" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        }
+      }
+    },
+    "Delete Reading?" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar lectura?"
+          }
+        }
+      }
+    },
     "Diastolic" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -962,6 +982,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "El valor sistólico parece inválido. Por favor, ingrese manualmente."
+          }
+        }
+      }
+    },
+    "This removes the reading from HealthKit." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esto elimina la lectura de HealthKit."
           }
         }
       }
