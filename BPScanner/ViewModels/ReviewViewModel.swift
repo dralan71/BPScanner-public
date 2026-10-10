@@ -13,6 +13,7 @@ final class ReviewViewModel: ObservableObject {
     @Published var diastolic: String
     @Published var pulse: String
     @Published var isSaving = false
+    @Published var errorMessage: String?
     @Published var isShowingShareSheet = false
     @Published var isShowingDismissAlert = false
     @Published var shareItems: [Any] = []
@@ -75,6 +76,7 @@ final class ReviewViewModel: ObservableObject {
         }
 
         let pulseValue = Int(pulse)
+        errorMessage = nil
         isSaving = true
 
         do {
@@ -89,6 +91,7 @@ final class ReviewViewModel: ObservableObject {
             isShowingShareSheet = true
             return false
         } catch {
+            errorMessage = error.localizedDescription
             isSaving = false
             return false
         }

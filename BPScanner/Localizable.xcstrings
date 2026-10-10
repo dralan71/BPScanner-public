@@ -1,6 +1,46 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "This reading no longer exists in Apple Health. Refresh your readings and try again.": {
+      "localizations": {
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta lectura ya no existe en Apple Health. Actualiza tus lecturas e inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "This reading was saved by another app. Manage it in Apple Health.": {
+      "localizations": {
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otra app guardó esta lectura. Adminístrala en Apple Health."
+          }
+        }
+      }
+    },
+    "This reading is already being updated. Please wait.": {
+      "localizations": {
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta lectura ya se está actualizando. Espera un momento."
+          }
+        }
+      }
+    },
+    "The update could not be completed or rolled back. Check Apple Health for duplicate readings before retrying.": {
+      "localizations": {
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo completar ni revertir la actualización. Revisa si hay lecturas duplicadas en Apple Health antes de volver a intentarlo."
+          }
+        }
+      }
+    },
     "" : {
 
     },

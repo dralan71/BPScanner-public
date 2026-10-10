@@ -10,6 +10,7 @@ struct MainView: View {
     @State private var visibleReadingCount = 5
     @State private var selectedReading: StoredBloodPressureReading?
     @State private var pendingDeleteReading: StoredBloodPressureReading?
+    @State private var deletionError: String?
     
     @MainActor
     init(viewModel: MainViewModel? = nil) {
@@ -122,6 +123,14 @@ struct MainView: View {
                         try await viewModel.deleteReading(reading)
                     }
                 )
+            }
+            .alert(String(localized: "Error", bundle: .main), isPresented: Binding(
+                get: { deletionError != nil },
+                set: { if !$0 { deletionError = nil } }
+            )) {
+                Button(String(localized: "OK", bundle: .main), role: .cancel) { deletionError = nil }
+            } message: {
+                Text(deletionError ?? "")
             }
             .alert(String(localized: "Photo Access Needed", bundle: .main), isPresented: $viewModel.isShowingPhotoLibraryAccessAlert) {
                 Button(String(localized: "OK", bundle: .main), role: .cancel) {}
@@ -358,7 +367,8 @@ struct MainView: View {
 
         pendingDeleteReading = nil
         Task {
-            try? await viewModel.deleteReading(reading)
+            do { try await viewModel.deleteReading(reading) }
+            catch { deletionError = error.localizedDescription }
         }
     }
 }
