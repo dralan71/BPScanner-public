@@ -142,6 +142,14 @@ struct ReadingDetailView: View {
                     }
                 }
             }
+            .alert(String(localized: "Error", bundle: .main), isPresented: Binding(
+                get: { viewModel.errorMessage != nil },
+                set: { if !$0 { viewModel.errorMessage = nil } }
+            )) {
+                Button(String(localized: "OK", bundle: .main), role: .cancel) { viewModel.errorMessage = nil }
+            } message: {
+                Text(viewModel.errorMessage ?? "")
+            }
             .alert(String(localized: "Leave Review?", bundle: .main), isPresented: $viewModel.isShowingDismissAlert) {
                 Button(String(localized: "Save Changes", bundle: .main)) {
                     save()
@@ -233,6 +241,7 @@ struct ReadingDetailView: View {
                 isDeleting = false
                 dismiss()
             } catch {
+                viewModel.errorMessage = error.localizedDescription
                 isDeleting = false
             }
         }

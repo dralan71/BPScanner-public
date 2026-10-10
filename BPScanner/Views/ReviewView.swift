@@ -152,6 +152,14 @@ struct ReviewView: View {
             }) {
                 ActivityViewController(activityItems: viewModel.shareItems)
             }
+            .alert(String(localized: "Error", bundle: .main), isPresented: Binding(
+                get: { viewModel.errorMessage != nil },
+                set: { if !$0 { viewModel.errorMessage = nil } }
+            )) {
+                Button(String(localized: "OK", bundle: .main), role: .cancel) { viewModel.errorMessage = nil }
+            } message: {
+                Text(viewModel.errorMessage ?? "")
+            }
             .alert(String(localized: "Leave Review?", bundle: .main), isPresented: $viewModel.isShowingDismissAlert) {
                 Button(shareAfterSavingReading ? String(localized: "Save and Share", bundle: .main) : String(localized: "Save", bundle: .main)) {
                     save()
